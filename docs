@@ -1,0 +1,25 @@
+url = backend.liberty.mp
+
+/general/stats
+/general/staff
+/general/online
+/general/map/blips
+
+/forum/categories
+
+/chat/messages
+/chat/latest/1
+
+/faction/list
+/faction/history
+/faction/applications/statistics
+
+/war/turfs
+/war/active
+/war/count
+/war/list/0
+
+/ban/count
+/ban/page/0
+
+/user/search/NICKNAME
