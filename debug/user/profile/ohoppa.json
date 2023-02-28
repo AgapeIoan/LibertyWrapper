@@ -1,0 +1,1013 @@
+{
+    "status": "SUCCESS",
+    "user": {
+        "id": 41,
+        "name": "oHoppa",
+        "sPermissions": {
+            "staff": false
+        },
+        "Character": {
+            "Eyes": 9,
+            "Neck": 0.4,
+            "Beard": 22,
+            "Father": 18,
+            "Gender": 0,
+            "Mother": 7,
+            "Eyebrow": 0,
+            "Jaw Shape": 0,
+            "Jaw Width": -0.8,
+            "Chin Depth": -0.5,
+            "Chin Width": -0.6,
+            "Eyes Scale": -0.4,
+            "Hair Color": 2,
+            "Nose Broke": 0.7,
+            "Nose Depth": 0.6,
+            "Nose Width": -0.4,
+            "Sun Damage": 3,
+            "Chin Height": -0.4,
+            "Chin Indent": -0.2,
+            "Nose Height": 0.5,
+            "Resemblance": 0.9,
+            "Eyebrow Depth": 0.2,
+            "Lip thickness": -0.9,
+            "Eyebrow Height": -0.8,
+            "Cheekbone Depth": 0,
+            "Cheekbone Width": 0.3,
+            "Hair Style Male": 0,
+            "Nose Tip Height": 0.6,
+            "Nose Tip Length": 0,
+            "Cheekbone Height": -0.2,
+            "Hair Style Female": 10,
+            "Moles and Freckles": 10
+        },
+        "Language": "ro",
+        "Level": 4,
+        "Experience": 73,
+        "StreetRep": 0,
+        "ATMRobs": 0,
+        "RobbedMoney": 0,
+        "Heat": 0,
+        "Licences": {
+            "types": {
+                "A": false,
+                "B": true,
+                "C": false,
+                "Fly": false
+            },
+            "status": "ok"
+        },
+        "Tutorial": 5,
+        "Cash": 1469,
+        "Bank": 490,
+        "Gold": 0,
+        "Premium": {
+            "type": "none",
+            "expirationDate": 0
+        },
+        "PremiumChatColor": "#FFFFFF",
+        "Crypto": {
+            "bch": 0,
+            "btc": 0,
+            "eth": 0,
+            "ltc": 0,
+            "xmr": 0,
+            "usdt": 0
+        },
+        "JobEarnings": {
+            "miner": 0,
+            "trucker": 917,
+            "fisherman": 239,
+            "garbageman": 0,
+            "lumberjack": 0,
+            "electrician": 325
+        },
+        "BankLastActions": [
+            {
+                "time": 1676743799565,
+                "type": "transfer_to",
+                "amount": -7,
+                "player": "Taxi Company"
+            },
+            {
+                "time": 1676744211792,
+                "type": "transfer_from",
+                "amount": 80,
+                "player": "Server"
+            },
+            {
+                "time": 1676747815113,
+                "type": "transfer_from",
+                "amount": 80,
+                "player": "Server"
+            }
+        ],
+        "JobExpMoney": 0,
+        "PhoneNumber": 707304,
+        "PhoneSettings": {
+            "darkMode": false,
+            "ringtone": "default.mp3",
+            "frameColour": "#215e7c",
+            "ignoreCalls": false,
+            "airplaneMode": false,
+            "backgroundUrl": "default.jpeg",
+            "smsOnlyContacts": false
+        },
+        "PhoneContacts": [
+            {
+                "name": "Electric.",
+                "number": 842325
+            },
+            {
+                "name": "Alex_D",
+                "number": 892528
+            },
+            {
+                "name": "Claulal",
+                "number": 873424
+            },
+            {
+                "name": "KobraStyle",
+                "number": 361119
+            },
+            {
+                "name": "XeLLo",
+                "number": 781765
+            },
+            {
+                "name": "Kedoo",
+                "number": 502173
+            },
+            {
+                "name": "MadaRa",
+                "number": 169031
+            },
+            {
+                "name": "Adda",
+                "number": 484903
+            },
+            {
+                "name": "nurko",
+                "number": 296260
+            },
+            {
+                "name": "Derrek",
+                "number": 943175
+            },
+            {
+                "name": "thepower",
+                "number": 772145
+            }
+        ],
+        "Phonebook": true,
+        "Playtime": 19744,
+        "Inventory": {
+            "Items": [
+                {
+                    "qt": 1,
+                    "used": true,
+                    "item_key": "phone",
+                    "item_uuid": "qGHj3mm43ZaEX-6bwddED",
+                    "custom_data": {}
+                },
+                {
+                    "qt": 1,
+                    "used": true,
+                    "item_key": "cl_top_356944586",
+                    "item_uuid": "OC2nE8gRoT0Ynfbh6s_xx",
+                    "custom_data": {}
+                },
+                {
+                    "qt": 1,
+                    "used": true,
+                    "item_key": "cl_legs_4266249610",
+                    "item_uuid": "K-tY_agSog8Owr3EArRVX",
+                    "custom_data": {}
+                },
+                {
+                    "qt": 1,
+                    "used": true,
+                    "item_key": "cl_shoes_2455072065",
+                    "item_uuid": "WndsQ04R-HGyHKXV1ALEI",
+                    "custom_data": {}
+                },
+                {
+                    "qt": 0,
+                    "used": false,
+                    "item_key": "",
+                    "item_uuid": "",
+                    "custom_data": {}
+                },
+                {
+                    "qt": 0,
+                    "used": false,
+                    "item_key": "",
+                    "item_uuid": "",
+                    "custom_data": {}
+                },
+                {
+                    "qt": 1,
+                    "used": true,
+                    "item_key": "gascan",
+                    "item_uuid": "6ziWCL_ubjNRzgz7MVv2V",
+                    "custom_data": {
+                        "fuel": 25
+                    }
+                },
+                {
+                    "qt": 1,
+                    "used": true,
+                    "item_key": "undita_lemn",
+                    "item_uuid": "aGqVoWp2kEt1vzNThgkeQ",
+                    "custom_data": {
+                        "uses": 16,
+                        "max_uses": 120
+                    }
+                },
+                {
+                    "qt": 30,
+                    "used": true,
+                    "item_key": "fish_bait",
+                    "item_uuid": "RcCNdr3AVKPxqzNf0jDd4",
+                    "custom_data": {}
+                },
+                {
+                    "qt": 1,
+                    "used": true,
+                    "item_key": "gunpowder",
+                    "item_uuid": "RvAeZrG5xwG5r-AIaYZxc",
+                    "custom_data": {}
+                },
+                {
+                    "qt": 1,
+                    "used": true,
+                    "item_key": "weapon_knife",
+                    "item_uuid": "OB15Xo7tKBsEKj2yCgI0F",
+                    "custom_data": {}
+                },
+                {
+                    "qt": 0,
+                    "used": false,
+                    "item_key": "",
+                    "item_uuid": "",
+                    "custom_data": {}
+                },
+                {
+                    "qt": 2,
+                    "used": true,
+                    "item_key": "fish_rod_guide",
+                    "item_uuid": "-bgu7JHLkVV4Xt2_BDKm4",
+                    "custom_data": {}
+                },
+                {
+                    "qt": 0,
+                    "used": false,
+                    "item_key": "",
+                    "item_uuid": "",
+                    "custom_data": {}
+                },
+                {
+                    "qt": 1,
+                    "used": true,
+                    "item_key": "gunpowder",
+                    "item_uuid": "sEZYhJZEk9peJm4X0KD-T",
+                    "custom_data": {}
+                },
+                {
+                    "qt": 0,
+                    "used": false,
+                    "item_key": "",
+                    "item_uuid": "",
+                    "custom_data": {}
+                },
+                {
+                    "qt": 0,
+                    "used": false,
+                    "item_key": "",
+                    "item_uuid": "",
+                    "custom_data": {}
+                },
+                {
+                    "qt": 0,
+                    "used": false,
+                    "item_key": "",
+                    "item_uuid": "",
+                    "custom_data": {}
+                },
+                {
+                    "qt": 1,
+                    "used": true,
+                    "item_key": "fish_rod_grip",
+                    "item_uuid": "H1tsrb4MXjsMVvzvuHnJh",
+                    "custom_data": {}
+                },
+                {
+                    "qt": 0,
+                    "used": false,
+                    "item_key": "",
+                    "item_uuid": "",
+                    "custom_data": {}
+                },
+                {
+                    "qt": 0,
+                    "used": false,
+                    "item_key": "",
+                    "item_uuid": "",
+                    "custom_data": {}
+                },
+                {
+                    "qt": 0,
+                    "used": false,
+                    "item_key": "",
+                    "item_uuid": "",
+                    "custom_data": {}
+                },
+                {
+                    "qt": 0,
+                    "used": false,
+                    "item_key": "",
+                    "item_uuid": "",
+                    "custom_data": {}
+                },
+                {
+                    "qt": 0,
+                    "used": false,
+                    "item_key": "",
+                    "item_uuid": "",
+                    "custom_data": {}
+                },
+                {
+                    "qt": 0,
+                    "used": false,
+                    "item_key": "",
+                    "item_uuid": "",
+                    "custom_data": {}
+                },
+                {
+                    "qt": 0,
+                    "used": false,
+                    "item_key": "",
+                    "item_uuid": "",
+                    "custom_data": {}
+                },
+                {
+                    "qt": 0,
+                    "used": false,
+                    "item_key": "",
+                    "item_uuid": "",
+                    "custom_data": {}
+                },
+                {
+                    "qt": 0,
+                    "used": false,
+                    "item_key": "",
+                    "item_uuid": "",
+                    "custom_data": {}
+                },
+                {
+                    "qt": 0,
+                    "used": false,
+                    "item_key": "",
+                    "item_uuid": "",
+                    "custom_data": {}
+                },
+                {
+                    "qt": 0,
+                    "used": false,
+                    "item_key": "",
+                    "item_uuid": "",
+                    "custom_data": {}
+                },
+                {
+                    "qt": 0,
+                    "used": false,
+                    "item_key": "",
+                    "item_uuid": "",
+                    "custom_data": {}
+                },
+                {
+                    "qt": 0,
+                    "used": false,
+                    "item_key": "",
+                    "item_uuid": "",
+                    "custom_data": {}
+                },
+                {
+                    "qt": 0,
+                    "used": false,
+                    "item_key": "",
+                    "item_uuid": "",
+                    "custom_data": {}
+                },
+                {
+                    "qt": 0,
+                    "used": false,
+                    "item_key": "",
+                    "item_uuid": "",
+                    "custom_data": {}
+                },
+                {
+                    "qt": 0,
+                    "used": false,
+                    "item_key": "",
+                    "item_uuid": "",
+                    "custom_data": {}
+                },
+                {
+                    "qt": 0,
+                    "used": false,
+                    "item_key": "",
+                    "item_uuid": "",
+                    "custom_data": {}
+                },
+                {
+                    "qt": 0,
+                    "used": false,
+                    "item_key": "",
+                    "item_uuid": "",
+                    "custom_data": {}
+                },
+                {
+                    "qt": 0,
+                    "used": false,
+                    "item_key": "",
+                    "item_uuid": "",
+                    "custom_data": {}
+                },
+                {
+                    "qt": 0,
+                    "used": false,
+                    "item_key": "",
+                    "item_uuid": "",
+                    "custom_data": {}
+                },
+                {
+                    "qt": 0,
+                    "used": false,
+                    "item_key": "",
+                    "item_uuid": "",
+                    "custom_data": {}
+                },
+                {
+                    "qt": 0,
+                    "used": false,
+                    "item_key": "",
+                    "item_uuid": "",
+                    "custom_data": {}
+                },
+                {
+                    "qt": 0,
+                    "used": false,
+                    "item_key": "",
+                    "item_uuid": "",
+                    "custom_data": {}
+                },
+                {
+                    "qt": 0,
+                    "used": false,
+                    "item_key": "",
+                    "item_uuid": "",
+                    "custom_data": {}
+                },
+                {
+                    "qt": 0,
+                    "used": false,
+                    "item_key": "",
+                    "item_uuid": "",
+                    "custom_data": {}
+                },
+                {
+                    "qt": 0,
+                    "used": false,
+                    "item_key": "",
+                    "item_uuid": "",
+                    "custom_data": {}
+                },
+                {
+                    "qt": 0,
+                    "used": false,
+                    "item_key": "",
+                    "item_uuid": "",
+                    "custom_data": {}
+                },
+                {
+                    "qt": 0,
+                    "used": false,
+                    "item_key": "",
+                    "item_uuid": "",
+                    "custom_data": {}
+                },
+                {
+                    "qt": 0,
+                    "used": false,
+                    "item_key": "",
+                    "item_uuid": "",
+                    "custom_data": {}
+                },
+                {
+                    "qt": 0,
+                    "used": false,
+                    "item_key": "",
+                    "item_uuid": "",
+                    "custom_data": {}
+                },
+                {
+                    "qt": 0,
+                    "used": false,
+                    "item_key": "",
+                    "item_uuid": "",
+                    "custom_data": {}
+                }
+            ],
+            "Slots": 50,
+            "EquippedItems": {
+                "top": 1,
+                "legs": 2,
+                "shoes": 3,
+                "misc-1": 7,
+                "misc-2": 10
+            }
+        },
+        "PostOfficeItems": [],
+        "ThirstLevel": 18.5,
+        "HungerLevel": 18.5,
+        "LastLocation": {
+            "heading": -80.48296356201172,
+            "position": {
+                "x": 1403.8375244140625,
+                "y": -1495.03662109375,
+                "z": 59.962337493896484
+            },
+            "dimension": 0
+        },
+        "Settings": {
+            "chat": {
+                "smart": false,
+                "fontsize": 14,
+                "pagesize": 13,
+                "profanity": false,
+                "timestamp": true,
+                "fontfamily": "Inter"
+            },
+            "radio": {
+                "volume": "13",
+                "enabled": true
+            },
+            "voice": {
+                "volume": "62",
+                "enabled": true,
+                "walkie_talkie": true
+            },
+            "boombox": {
+                "volume": "9",
+                "enabled": true
+            },
+            "hotkeys": {
+                "display": true,
+                "assigned": {
+                    "Chat": 84,
+                    "Talk": 88,
+                    "Inventory": 73,
+                    "Open Phone": 38,
+                    "Close Phone": 40,
+                    "Interaction": 78,
+                    "Players List": 90,
+                    "Vehicle Lock": 76,
+                    "Vehicle Radio": 82,
+                    "Walkie Talkie": 66,
+                    "Map Zoom Level": 77,
+                    "Vehicle Engine": 50,
+                    "Police Computer": 80,
+                    "Vehicle Seatbelt": 74,
+                    "Profile & Settings": 79
+                }
+            },
+            "messages": {
+                "questions": true,
+                "advertisements": true
+            }
+        },
+        "Faction": 4,
+        "FactionRank": 1,
+        "FactionRoles": [],
+        "FactionJoinTime": 1676743651901,
+        "FactionRaport": {
+            "fields": {
+                "wars": 0
+            },
+            "playTime": 0,
+            "shouldProcess": true,
+            "activityPoints": {
+                "total": 0,
+                "required": 0
+            }
+        },
+        "Wanted": [],
+        "Arrested": {
+            "Status": false,
+            "TimeLeft": 0
+        },
+        "LoginExpired": null,
+        "UserAvatar": "https://i.imgur.com/yOpSx5d.png",
+        "PanelSettings": {
+            "canFollow": true,
+            "canComment": true,
+            "notifications": {
+                "postQuote": true,
+                "topicReply": true,
+                "profileComments": true
+            },
+            "privateProfile": false
+        },
+        "PanelAdminPermissions": {
+            "unban": false,
+            "ticket": false,
+            "complaint": false
+        },
+        "WebSuspend": {
+            "Next": 2,
+            "Reason": "",
+            "Status": false,
+            "ExpiresOn": 0
+        },
+        "Status": false,
+        "FriskDelay": 0,
+        "GameSessionID": "",
+        "GameSessionSalt": "",
+        "VehicleSlots": 2,
+        "DailyQuestsStats": {
+            "streak": 0,
+            "completed": 3,
+            "longest_streak": 1
+        },
+        "PaydayTimeLeft": 3367,
+        "PaydayPlayTime": 234,
+        "Refferal": 3,
+        "RefferalCollect": {
+            "gold": 0,
+            "money": 0,
+            "clothing_crates": []
+        },
+        "DiscordId": "291258724620828672",
+        "Mute": {
+            "chat": 0,
+            "voice": 0
+        },
+        "createdAt": "2023-02-10T18:00:17.902Z",
+        "updatedAt": "2023-02-26T22:14:44.943Z",
+        "personal_vehicles": [
+            {
+                "id": 237,
+                "Owner": 41,
+                "ModelHash": 3863274624,
+                "Position": {
+                    "x": -1215.7823486328125,
+                    "y": -379.19549560546875,
+                    "z": 36.61634063720703
+                },
+                "Heading": 28.85988426208496,
+                "Dimension": 0,
+                "LastLocation": {
+                    "Heading": 13.680222511291504,
+                    "Position": {
+                        "x": 1447.7913818359375,
+                        "y": -1514.9105224609375,
+                        "z": 62.2240104675293
+                    },
+                    "Dimension": 0
+                },
+                "Locked": true,
+                "EngineHealth": 1000,
+                "BodyHealth": 994,
+                "Destroyed": false,
+                "DirtLevel": 2.626772403717041,
+                "Plate": "cyrfn2ij",
+                "Fuel": {
+                    "type": 1,
+                    "value": 70.52745056152344
+                },
+                "TraveledDistance": 48.6399040222168,
+                "ExpireTime": 0,
+                "UpgradesCost": 0,
+                "IsDead": false,
+                "listedOnMarket": false,
+                "ExpireHours": 24,
+                "createdAt": "2023-02-10T18:25:12.078Z",
+                "updatedAt": "2023-02-18T19:16:55.113Z",
+                "Upgrades": [],
+                "colors": [
+                    {
+                        "type": 3,
+                        "value": [
+                            255,
+                            255,
+                            255
+                        ]
+                    },
+                    {
+                        "type": 3,
+                        "value": [
+                            255,
+                            255,
+                            255
+                        ]
+                    },
+                    -1,
+                    -1
+                ],
+                "plate": null
+            }
+        ],
+        "profile_comments": [
+            {
+                "id": 289,
+                "text": "cf omoppa",
+                "creatorId": 560,
+                "profileId": 41,
+                "createdAt": "2023-02-22T20:12:37.230Z",
+                "creator": {
+                    "id": 560,
+                    "name": "Bekey",
+                    "UserAvatar": "https://i.imgur.com/LCgXD1A.png"
+                }
+            },
+            {
+                "id": 272,
+                "text": "+rep e ohoppa",
+                "creatorId": 562,
+                "profileId": 41,
+                "createdAt": "2023-02-19T14:53:10.912Z",
+                "creator": {
+                    "id": 562,
+                    "name": "AgapeIoan",
+                    "UserAvatar": "https://i.imgur.com/BLp1poE.png"
+                }
+            },
+            {
+                "id": 269,
+                "text": "rasistu",
+                "creatorId": 142,
+                "profileId": 41,
+                "createdAt": "2023-02-19T13:05:38.878Z",
+                "creator": {
+                    "id": 142,
+                    "name": "MihAi",
+                    "UserAvatar": "https://i.imgur.com/1XFtJeO.png"
+                }
+            },
+            {
+                "id": 137,
+                "text": "+rep m-a dus pe chilliad in siguranta",
+                "creatorId": 30,
+                "profileId": 41,
+                "createdAt": "2023-02-11T16:20:20.171Z",
+                "creator": {
+                    "id": 30,
+                    "name": "Electric.",
+                    "UserAvatar": "https://i.imgur.com/Hz6Y9KS.png"
+                }
+            },
+            {
+                "id": 132,
+                "text": "da ba datoria",
+                "creatorId": 124,
+                "profileId": 41,
+                "createdAt": "2023-02-11T16:07:21.521Z",
+                "creator": {
+                    "id": 124,
+                    "name": "thepower",
+                    "UserAvatar": "https://i.imgur.com/OtlX1dS.png"
+                }
+            },
+            {
+                "id": 30,
+                "text": "-rep e nigger",
+                "creatorId": 147,
+                "profileId": 41,
+                "createdAt": "2023-02-10T20:18:29.729Z",
+                "creator": {
+                    "id": 147,
+                    "name": "Geanis",
+                    "UserAvatar": "https://i.imgur.com/ICFWU1u.png"
+                }
+            }
+        ],
+        "following": [],
+        "followers": [],
+        "properties": [],
+        "faction": {
+            "Name": "Varrios Los Aztecas",
+            "Ranks": [
+                "Soldier",
+                "Capo",
+                "Consigliere",
+                "Don",
+                "Godfather"
+            ]
+        },
+        "achievement_progresses": [
+            {
+                "id": 987,
+                "progress": 1,
+                "maxProgress": 1,
+                "userId": 41,
+                "achievementId": 1,
+                "achievement": {
+                    "id": 1,
+                    "name": "Welcome to Los Santos",
+                    "description": "Finish the tutorial",
+                    "maxProgress": 1,
+                    "progressName": null,
+                    "icon": "fas fa-city",
+                    "category": "Newbie",
+                    "reward": null
+                }
+            },
+            {
+                "id": 864,
+                "progress": 1,
+                "maxProgress": 1,
+                "userId": 41,
+                "achievementId": 2,
+                "achievement": {
+                    "id": 2,
+                    "name": "New driver in town",
+                    "description": "Get your driver's licence",
+                    "maxProgress": 1,
+                    "progressName": null,
+                    "icon": "far fa-id-badge",
+                    "category": "Newbie",
+                    "reward": null
+                }
+            },
+            {
+                "id": 986,
+                "progress": 1,
+                "maxProgress": 1,
+                "userId": 41,
+                "achievementId": 4,
+                "achievement": {
+                    "id": 4,
+                    "name": "Home sweet home",
+                    "description": "Rent your first home",
+                    "maxProgress": 1,
+                    "progressName": null,
+                    "icon": "fas fa-home",
+                    "category": "Newbie",
+                    "reward": null
+                }
+            },
+            {
+                "id": 2107,
+                "progress": 1,
+                "maxProgress": 1,
+                "userId": 41,
+                "achievementId": 3,
+                "achievement": {
+                    "id": 3,
+                    "name": "Employed Citizen",
+                    "description": "Get your first job",
+                    "maxProgress": 1,
+                    "progressName": null,
+                    "icon": "fas fa-briefcase",
+                    "category": "Newbie",
+                    "reward": null
+                }
+            },
+            {
+                "id": 2331,
+                "progress": 1481,
+                "maxProgress": 50000,
+                "userId": 41,
+                "achievementId": 5,
+                "achievement": {
+                    "id": 5,
+                    "name": "Employee of the month",
+                    "description": "Earn $50.000 while working on any job",
+                    "maxProgress": 50000,
+                    "progressName": "earned",
+                    "icon": "fas fa-hand-holding-usd",
+                    "category": "Economy",
+                    "reward": null
+                }
+            },
+            {
+                "id": 2332,
+                "progress": 6,
+                "maxProgress": 100,
+                "userId": 41,
+                "achievementId": 38,
+                "achievement": {
+                    "id": 38,
+                    "name": "I am a GPS",
+                    "description": "Deliver 100 transports as a truck driver",
+                    "maxProgress": 100,
+                    "progressName": "cargos delivered",
+                    "icon": "fas fa-truck-pickup",
+                    "category": "Economy",
+                    "reward": null
+                }
+            },
+            {
+                "id": 4134,
+                "progress": 10,
+                "maxProgress": 100,
+                "userId": 41,
+                "achievementId": 8,
+                "achievement": {
+                    "id": 8,
+                    "name": "Master of electricity",
+                    "description": "Repair 100 fuseboxes as an electrician",
+                    "maxProgress": 100,
+                    "progressName": "fuseboxes repaired",
+                    "icon": "fas fa-bolt",
+                    "category": "Economy",
+                    "reward": null
+                }
+            },
+            {
+                "id": 8221,
+                "progress": 16,
+                "maxProgress": 200,
+                "userId": 41,
+                "achievementId": 11,
+                "achievement": {
+                    "id": 11,
+                    "name": "Fishy business",
+                    "description": "Catch 200 fish",
+                    "maxProgress": 200,
+                    "progressName": "fish caught",
+                    "icon": "fas fa-fish",
+                    "category": "Economy",
+                    "reward": null
+                }
+            },
+            {
+                "id": 9054,
+                "progress": 1,
+                "maxProgress": 1,
+                "userId": 41,
+                "achievementId": 32,
+                "achievement": {
+                    "id": 32,
+                    "name": "To be or not to be",
+                    "description": "Purchase an item from any Ammu-Nation",
+                    "maxProgress": 1,
+                    "progressName": null,
+                    "icon": "fas fa-crosshairs",
+                    "category": "Living in Los Santos",
+                    "reward": null
+                }
+            },
+            {
+                "id": 13559,
+                "progress": 1,
+                "maxProgress": 1,
+                "userId": 41,
+                "achievementId": 26,
+                "achievement": {
+                    "id": 26,
+                    "name": "Stepping up",
+                    "description": "Join a faction",
+                    "maxProgress": 1,
+                    "progressName": null,
+                    "icon": "fas fa-users",
+                    "category": "Evolution",
+                    "reward": null
+                }
+            },
+            {
+                "id": 878,
+                "progress": 4.652499999999999,
+                "maxProgress": 100,
+                "userId": 41,
+                "achievementId": 23,
+                "achievement": {
+                    "id": 23,
+                    "name": "Dedicated player",
+                    "description": "Achieve 100 played hours",
+                    "maxProgress": 100,
+                    "progressName": "played hours",
+                    "icon": "fas fa-clock",
+                    "category": "Evolution",
+                    "reward": null
+                }
+            }
+        ],
+        "biz_shares": [],
+        "ban": null,
+        "faction_logs": [
+            {
+                "time": "2023-02-18T18:07:31.920Z",
+                "text": "oHoppa [user:41] joined the faction Varrios Los Aztecas (invited by Paul98 [user:356])"
+            },
+            {
+                "time": "2023-02-18T17:22:14.336Z",
+                "text": "oHoppa [user:41] left the faction Downtown Taxi Company "
+            },
+            {
+                "time": "2023-02-18T16:21:17.832Z",
+                "text": "oHoppa [user:41] joined the faction Downtown Taxi Company (invited by caen [user:3])"
+            }
+        ]
+    }
+}
