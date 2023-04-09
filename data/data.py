@@ -122,8 +122,8 @@ class StaffUserLeader(StaffUser):
 
 class StaffPerms:
     def __init__(self, **kwargs):
-        self.admin = kwargs.get("admin") == "true"
         self.staff = kwargs.get("staff") == "true"
+        self.admin = kwargs.get("admin") == "true"
         self.operator = kwargs.get("operator") == "true"
         self.manager = kwargs.get("manager") == "true"
         
@@ -167,6 +167,11 @@ class UserJobsActivity(User):
     def repr(self):
         return f"UserJobsActivity(avatar={self.avatar}, name={self.name}, level={self.level}, playtime={self.playtime}, id={self.id}, money={self.money})"
 
+class UserSearchResult(BriefUser):
+    def __init__(self, **kwargs):
+        super().__init__(**kwargs)
+        self.perms = StaffPerms(kwargs.get("sPermissions"))
+        
 class DailyQuests:
     def __init__(self, quests):
         self.streak = quests.get("streak")
@@ -217,10 +222,13 @@ class StaffPerms:
 
 class UserSearch:
     def __init__(self, nickname):
-        Fetcher.User.get_player(self.id)
+        data = asyncio.run(Fetcher.User.search_user(self, nickname))
+        results = data.get("users")
+        if results:
+            self.results = [UserSearchResult(**result) for result in results]
 
     def repr(self):
-        return f"SearchResult(type={self.type}, id={self.id}, name={self.name}, avatar={self.avatar})"
-    
+        return f"UserSearch(results={self.results})"
+
     def __repr__(self):
         return self.repr()
