@@ -1,11 +1,6 @@
 import asyncio
 import json
 import aiohttp
-import datetime
-
-CACHE = {}
-with open("storage/map_blips.json", "r") as f:
-    CACHE["map_blips"] = json.load(f)
 
 def check_json_status(func):
     async def wrapper(*args, **kwargs):
@@ -24,12 +19,6 @@ def check_json_status(func):
         else:
             raise Exception(f"Error on fetching the data. Status: {response.get('status')} | Message: {response.get('message')}")
     return wrapper
-
-class UpdateCache:
-    async def update_map_blips():
-        CACHE["map_blips"] = await Fetcher.General.get_map_blips(cache=False)
-        with open("storage/map_blips.json", "w") as f:
-            json.dump(CACHE["map_blips"], f, indent=4)
 
 class Fetcher:
     api_url = "https://backend-beta.liberty.mp"
@@ -59,12 +48,8 @@ class Fetcher:
         async def get_staff() -> dict:
             return await Fetcher("/general/staff").get_json()
 
-        async def get_map_blips(cache=True) -> dict:
-            if cache:
-                # Recomand cache=True si UpdateCache from time to time
-                return CACHE["map_blips"]
-            else:
-                return await Fetcher("/general/map/blips").get_json()
+        async def get_map_blips() -> dict:
+            return await Fetcher("/general/map/blips").get_json()
 
         async def get_online_players() -> dict:
             return await Fetcher("/general/online").get_json()

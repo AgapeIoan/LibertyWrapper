@@ -1,5 +1,5 @@
 import datetime
-from fetcher import Fetcher
+from .fetcher import Fetcher
 import asyncio
 
 class General:
@@ -64,7 +64,7 @@ class OnlinePlayers:
 
 class MapBlips:
     def __init__(self):
-        data = asyncio.run(Fetcher.General.get_map_blips(cache=False))
+        data = asyncio.run(Fetcher.General.get_map_blips())
 
         self.blips = [MapBlip(**x) for x in data.get("blips")]
 
