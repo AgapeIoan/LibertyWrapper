@@ -306,6 +306,14 @@ class Factions:
         if factions:
             self.factions = [Faction(faction) for faction in factions]
 
+    def get(self, id=None, name=None):
+        if id:
+            return next((faction for faction in self.factions if faction.id == id), None)
+        elif name:
+            return next((faction for faction in self.factions if faction.name == name), None)
+        else:
+            return None
+            
     def repr(self):
         return f"Factions(factions={self.factions})"
 
@@ -347,7 +355,7 @@ class Faction:
         return self.repr()
 
     def __iter__(self):
-        return iter((self.id, self.name, self.type, self.chat_status, self.hq_status, self.location, self.blip_model, self.blip_color, self.has_interior, self.interior, self.has_garage, self.garage, self.ranks, self.max_members, self.min_level, self.applications, self.applications_questions, self.penalty_reasons, self.users))
+        return iter(self.__dict__.items())
 class FactionInteriorGeneral:
     def __init__(self, data):
         self.heading = data.get("heading")
