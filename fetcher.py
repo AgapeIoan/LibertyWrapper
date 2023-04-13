@@ -7,7 +7,7 @@ CACHE = {}
 with open("storage/map_blips.json", "r") as f:
     CACHE["map_blips"] = json.load(f)
 
-def check_status(func):
+def check_json_status(func):
     async def wrapper(*args, **kwargs):
         response = await func(*args, **kwargs)
         if response.get("status") == "SUCCESS":
@@ -16,6 +16,14 @@ def check_status(func):
             raise Exception(f"Error on fetching the data. Status: {response.get('status')} | Message: {response.get('message')}")
     return wrapper
 
+def check_json_status(func):
+    async def wrapper(*args, **kwargs):
+        response = await func(*args, **kwargs)
+        if response.get("status") == "SUCCESS":
+            return response
+        else:
+            raise Exception(f"Error on fetching the data. Status: {response.get('status')} | Message: {response.get('message')}")
+    return wrapper
 
 class UpdateCache:
     async def update_map_blips():
@@ -24,8 +32,7 @@ class UpdateCache:
             json.dump(CACHE["map_blips"], f, indent=4)
 
 class Fetcher:
-    api_url = "https://backend.liberty.mp"
-
+    api_url = "https://backend-beta.liberty.mp"
     def __init__(self, api_address=''):
         self.api_address = api_address
         self.url = f'{self.api_url}{self.api_address}'
@@ -36,11 +43,14 @@ class Fetcher:
             async with session.get(self.url) as response:
                 return await response.text()
 
-    @check_status
+    @check_json_status
     async def get_json(self) -> dict:
         async with self.session as session:
             async with session.get(self.url) as response:
-                return await response.json()
+                if response.status == 200:
+                    return await response.json()
+                else:
+                    raise Exception(f"Error on fetching the data. Status: {response.status}")
 
     class General:
         async def get_stats() -> dict:
