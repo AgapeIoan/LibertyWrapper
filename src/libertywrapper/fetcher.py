@@ -56,12 +56,12 @@ class Fetcher:
 
 
     class User:
-        async def search_user(self, nickname) -> dict:
+        async def search_user(nickname) -> dict:
             if not nickname:
                 raise Exception("Nickname not specified")
             return await Fetcher(f"/user/search/{nickname}").get_json()
         
-        async def get_user(self, nickname) -> dict:
+        async def get_user(nickname) -> dict:
             # O sa dea eroare ca datele astea se obtin cu user token, nu sunt publice
             # Se rezolva cu login si sesiune salvata in pickle, handling la cookies sa fie reinnoite daca expira and stuff
             if not nickname:

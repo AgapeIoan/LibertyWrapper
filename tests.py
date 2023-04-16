@@ -34,6 +34,8 @@ class TestFaction(unittest.TestCase):
         self.assertFalse(factions)
 
 class TestFetcher(unittest.TestCase):
+    fetcher = fetcher.Fetcher
+    
     general = fetcher.General
     user = fetcher.User
     forum = fetcher.Forum
@@ -56,7 +58,7 @@ class TestFetcher(unittest.TestCase):
         self.assertTrue(online_players)
 
     def test_user_search(self):
-        user = self.user.search_user(nickname="Agape")
+        user = self.user.search_user('agape')
         print(user)
         self.assertTrue(user)
     
