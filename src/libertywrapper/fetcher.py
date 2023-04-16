@@ -21,7 +21,7 @@ def check_json_status(func):
     return wrapper
 
 class Fetcher:
-    api_url = "https://backend-beta.liberty.mp"
+    api_url = "https://backend.liberty.mp"
     def __init__(self, api_address=''):
         self.api_address = api_address
         self.url = f'{self.api_url}{self.api_address}'
