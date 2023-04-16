@@ -1,11 +1,11 @@
 import datetime
-from .fetcher import Fetcher
+from . import fetcher
 import asyncio
 
 class General:
     def __init__(self):
-        # data = Fetcher.General.get_stats()
-        data = asyncio.run(Fetcher.General.get_stats())
+        # data = fetcher.General.get_stats()
+        data = fetcher.General.get_stats()
 
         self.total_users = data.get("total_users")
         self.total_online = data.get("total_online")
@@ -32,7 +32,7 @@ class General:
 
 class Staff:
     def __init__(self):
-        data = asyncio.run(Fetcher.General.get_staff())
+        data = fetcher.General.get_staff()
         data = data.get("staff")
 
         self.helpers = data.get("helpers")
@@ -50,7 +50,7 @@ class Staff:
 
 class OnlinePlayers:
     def __init__(self):
-        data = asyncio.run(Fetcher.General.get_online_players())
+        data = fetcher.General.get_online_players()
         self.players = [BriefUser(**x) for x in data.get("users")]
 
     def repr(self):
@@ -64,7 +64,7 @@ class OnlinePlayers:
 
 class MapBlips:
     def __init__(self):
-        data = asyncio.run(Fetcher.General.get_map_blips())
+        data = fetcher.General.get_map_blips()
 
         self.blips = [MapBlip(**x) for x in data.get("blips")]
 
@@ -285,7 +285,7 @@ class StaffPerms:
 
 class UserSearch:
     def __init__(self, nickname):
-        data = asyncio.run(Fetcher.User.search_user(self, nickname))
+        data = fetcher.User.search_user(nickname)
         results = data.get("users")
         if results:
             self.results = [UserSearchResult(**result) for result in results]
@@ -301,7 +301,7 @@ class UserSearch:
 
 class Factions:
     def __init__(self):
-        data = asyncio.run(Fetcher.Faction.get_faction_list())
+        data = fetcher.Faction.get_faction_list()
         factions = data.get("factions")
         if factions:
             self.factions = [Faction(faction) for faction in factions]
@@ -443,7 +443,7 @@ class FactionUser:
 
 class FactionHistory:
     def __init__(self):
-        data = asyncio.run(Fetcher.Faction.get_faction_history())
+        data = fetcher.Faction.get_faction_history()
         data = data.get("history")
         self.logs = [FactionHistoryLog(log) for log in data]
 

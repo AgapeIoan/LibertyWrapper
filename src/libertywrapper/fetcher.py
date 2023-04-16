@@ -1,10 +1,10 @@
 import asyncio
 import json
-import aiohttp
+import requests
 
 def check_json_status(func):
-    async def wrapper(*args, **kwargs):
-        response = await func(*args, **kwargs)
+    def wrapper(*args, **kwargs):
+        response = func(*args, **kwargs)
         if response.get("status") == "SUCCESS":
             return response
         else:
@@ -12,8 +12,8 @@ def check_json_status(func):
     return wrapper
 
 def check_json_status(func):
-    async def wrapper(*args, **kwargs):
-        response = await func(*args, **kwargs)
+    def wrapper(*args, **kwargs):
+        response = func(*args, **kwargs)
         if response.get("status") == "SUCCESS":
             return response
         else:
@@ -25,71 +25,71 @@ class Fetcher:
     def __init__(self, api_address=''):
         self.api_address = api_address
         self.url = f'{self.api_url}{self.api_address}'
-        self.session = aiohttp.ClientSession()
+        self.session = requests.Session()
 
-    async def get(self) -> str:
-        async with self.session as session:
-            async with session.get(self.url) as response:
-                return await response.text()
+    def get(self) -> str:
+        with self.session as session:
+            with session.get(self.url) as response:
+                return response.text()
 
     @check_json_status
-    async def get_json(self) -> dict:
-        async with self.session as session:
-            async with session.get(self.url) as response:
-                if response.status == 200:
-                    return await response.json()
+    def get_json(self) -> dict:
+        with self.session as session:
+            with session.get(self.url) as response:
+                if response.status_code == 200:
+                    return response.json()
                 else:
                     raise Exception(f"Error on fetching the data. Status: {response.status}")
 
-    class General:
-        async def get_stats() -> dict:
-            return await Fetcher("/general/stats").get_json()
+class General(Fetcher):
+    def get_stats() -> dict:
+        return Fetcher("/general/stats").get_json()
 
-        async def get_staff() -> dict:
-            return await Fetcher("/general/staff").get_json()
+    def get_staff() -> dict:
+        return Fetcher("/general/staff").get_json()
 
-        async def get_map_blips() -> dict:
-            return await Fetcher("/general/map/blips").get_json()
+    def get_map_blips() -> dict:
+        return Fetcher("/general/map/blips").get_json()
 
-        async def get_online_players() -> dict:
-            return await Fetcher("/general/online").get_json()
+    def get_online_players() -> dict:
+        return Fetcher("/general/online").get_json()
 
 
-    class User:
-        async def search_user(nickname) -> dict:
-            if not nickname:
-                raise Exception("Nickname not specified")
-            return await Fetcher(f"/user/search/{nickname}").get_json()
+class User(Fetcher):
+    def search_user(nickname) -> dict:
+        if not nickname:
+            raise Exception("Nickname not specified")
+        return Fetcher(f"/user/search/{nickname}").get_json()
+    
+    def get_user(nickname) -> dict:
+        # O sa dea eroare ca datele astea se obtin cu user token, nu sunt publice
+        # Se rezolva cu login si sesiune salvata in pickle, handling la cookies sa fie reinnoite daca expira and stuff
+        if not nickname:
+            raise Exception("Nickname not specified")
+        return Fetcher(f"/user/profile/{nickname}").get_json()
+
+
+class Forum(Fetcher):
+    def get_forum_categories() -> dict:
+        return Fetcher("/forum/categories").get_json()
+
+    def get_chat_messages() -> dict:
+        return Fetcher("/chat/messages").get_json()
+
+    def get_chat_latest() -> dict:
+        return Fetcher("/chat/latest/1").get_json()
+
+
+class Faction(Fetcher):
+    def get_faction_list() -> dict:
+        return Fetcher("/faction/list").get_json()
+
+    def get_faction_history() -> dict:
+        return Fetcher("/faction/history").get_json()
+
+    def get_faction_applications() -> dict:
+        return Fetcher("/faction/applications/statistics").get_json()
         
-        async def get_user(nickname) -> dict:
-            # O sa dea eroare ca datele astea se obtin cu user token, nu sunt publice
-            # Se rezolva cu login si sesiune salvata in pickle, handling la cookies sa fie reinnoite daca expira and stuff
-            if not nickname:
-                raise Exception("Nickname not specified")
-            return await Fetcher(f"/user/profile/{nickname}").get_json()
-
-
-    class Forum:
-        async def get_forum_categories() -> dict:
-            return await Fetcher("/forum/categories").get_json()
-
-        async def get_chat_messages() -> dict:
-            return await Fetcher("/chat/messages").get_json()
-
-        async def get_chat_latest() -> dict:
-            return await Fetcher("/chat/latest/1").get_json()
-
-
-    class Faction:
-        async def get_faction_list() -> dict:
-            return await Fetcher("/faction/list").get_json()
-
-        async def get_faction_history() -> dict:
-            return await Fetcher("/faction/history").get_json()
-
-        async def get_faction_applications() -> dict:
-            return await Fetcher("/faction/applications/statistics").get_json()
-            
 if __name__ == "__main__":
     # asyncio.run(UpdateCache.update_map_blips())
     x = asyncio.run(Fetcher.Player().search_player("test"))
