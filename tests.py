@@ -19,10 +19,28 @@ class TestLibertyWrapper(unittest.TestCase):
         from src.libertywrapper import data
         self.assertTrue(data)
 
-class TestFaction(unittest.TestCase):
+class TestData(unittest.TestCase):
+    def test_classes(self):
+        general = data.General()
+        staff = data.Staff()
+        onlineplayers = data.OnlinePlayers()
+        mapblips = data.MapBlips()
+        usersearch = data.UserSearch("Agape")
+        factions = data.Factions()
+        factionhistory = data.FactionHistory()
+
+        self.assertTrue(general)
+        self.assertTrue(staff)
+        self.assertTrue(onlineplayers)
+        self.assertTrue(mapblips)
+        self.assertTrue(usersearch)
+        self.assertTrue(factions)
+        self.assertTrue(factionhistory)
+
+class TestFactionMethods(unittest.TestCase):
     def test_factions_get(self):
         faction_data = data.Factions()
-        factions = faction_data.get(1)
+        factions = faction_data.get(id=1)
         self.assertTrue(factions)
         factions = faction_data.get(name="Downtown Taxi Company")
         self.assertTrue(factions)
@@ -33,9 +51,7 @@ class TestFaction(unittest.TestCase):
         factions = faction_data.get(id=99)
         self.assertFalse(factions)
 
-class TestFetcher(unittest.TestCase):
-    fetcher = fetcher.Fetcher
-    
+class TestFetcher(unittest.TestCase):    
     general = fetcher.General
     user = fetcher.User
     forum = fetcher.Forum
