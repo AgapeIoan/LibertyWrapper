@@ -3,7 +3,7 @@ from . import fetcher
 import asyncio
 
 class General:
-    def __init__(self):
+    def __init__(self, **kwargs):
         # data = fetcher.General.get_stats()
         data = fetcher.General.get_stats()
 
@@ -31,7 +31,7 @@ class General:
         return iter(self.__dict__.items())
 
 class Staff:
-    def __init__(self):
+    def __init__(self, **kwargs):
         data = fetcher.General.get_staff()
         data = data.get("staff")
 
@@ -49,7 +49,7 @@ class Staff:
         return iter(self.__dict__.items())
 
 class OnlinePlayers:
-    def __init__(self):
+    def __init__(self, **kwargs):
         data = fetcher.General.get_online_players()
         self.players = [BriefUser(**x) for x in data.get("users")]
 
@@ -63,7 +63,7 @@ class OnlinePlayers:
         return iter(self.players)
 
 class MapBlips:
-    def __init__(self):
+    def __init__(self, **kwargs):
         data = fetcher.General.get_map_blips()
 
         self.blips = [MapBlip(**x) for x in data.get("blips")]
@@ -284,8 +284,8 @@ class StaffPerms:
         return iter((self.staff, self.manager, self.operator, self.admin))
 
 class UserSearch:
-    def __init__(self, nickname):
-        data = fetcher.User().search_user(nickname)
+    def __init__(self, nickname, **kwargs):
+        data = fetcher.User.search_user(nickname)
         results = data.get("users")
         if results:
             self.results = [UserSearchResult(**result) for result in results]
@@ -300,7 +300,7 @@ class UserSearch:
         return iter((self.results,))
 
 class Factions:
-    def __init__(self):
+    def __init__(self, **kwargs):
         data = fetcher.Faction.get_faction_list()
         factions = data.get("factions")
         if factions:
@@ -442,7 +442,7 @@ class FactionUser:
         return iter((self.id, self.name, self.level, self.faction_rank, self.user_avatar))
 
 class FactionHistory:
-    def __init__(self):
+    def __init__(self, **kwargs):
         data = fetcher.Faction.get_faction_history()
         data = data.get("history")
         self.logs = [FactionHistoryLog(log) for log in data]

@@ -1,7 +1,14 @@
 import setuptools
+import os
+import time
 
 with open('README.md', 'r', encoding='utf-8') as fh:
     long_description = fh.read()
+
+try:
+    os.remove("C:\\Users\\John\\AppData\\Local\\Programs\\Python\\Python39\\Lib\\site-packages\\libertywrapper.py-0.0.0-py3.9.egg")
+except FileNotFoundError:
+    pass
 
 setuptools.setup(
     name='LibertyWrapper.py',
