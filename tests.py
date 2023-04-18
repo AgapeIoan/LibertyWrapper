@@ -74,14 +74,16 @@ class TestFetcher(unittest.TestCase):
         self.assertTrue(online_players)
 
     def test_user_search(self):
-        user = self.user.search_user('agape')
-        print(user)
+        user = self.user().search_user('agape')
+        # print(user)
         self.assertTrue(user)
     
-    # def test_user_get(self):
-    #     user = self.user.get_user("Agape")
-    #     self.assertTrue(user)
-    # nu avem token yet
+    def test_user_get(self):
+        userobj = self.user()
+        userobj.init_token("AgapeIoan", "PAROLA") # salveaza token in obiect la self.token
+        user = userobj.get_user("AgapeIoan")
+        # print(user)
+        self.assertTrue(user)
 
     def test_forum_categories(self):
         categories = self.forum.get_forum_categories()

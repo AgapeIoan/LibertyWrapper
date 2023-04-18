@@ -21,11 +21,14 @@ def check_json_status(func):
     return wrapper
 
 class Fetcher:
-    api_url = "https://backend-beta.liberty.mp"
+    api_url = "https://backend.liberty.mp"
     def __init__(self, api_address=''):
         self.api_address = api_address
         self.url = f'{self.api_url}{self.api_address}'
         self.session = requests.Session()
+        self.token = ""
+        self.username = ""
+        self.password = ""
 
     def get(self) -> str:
         with self.session as session:
@@ -33,13 +36,28 @@ class Fetcher:
                 return response.text()
 
     @check_json_status
-    def get_json(self) -> dict:
+    def get_json(self, auth=None, headers=None) -> dict:
+        if auth:
+            headers = {"authorization": f"Bearer {auth}"}
         with self.session as session:
-            with session.get(self.url) as response:
+            with session.get(self.url, headers=headers) as response:
                 if response.status_code == 200:
                     return response.json()
                 else:
-                    raise Exception(f"Error on fetching the data. Status: {response.status}")
+                    print(response.text)
+                    raise Exception(f"Error on fetching the data. Response: {response.text}")
+
+    def login(self, username, password) -> dict:
+        if not username or not password:
+            raise Exception("Username or password not provided!")
+        response = self.session.post(f"{self.api_url}/user/login", data={"name": username, "password": password}).json()
+        return response
+
+    def init_token(self, username, password) -> str:
+        if not username or not password:
+            raise Exception("Username or password not provided!")
+        self.token = self.login(username, password).get("token")
+        return self.token
 
 class General(Fetcher):
     def get_stats() -> dict:
@@ -56,17 +74,17 @@ class General(Fetcher):
 
 
 class User(Fetcher):
-    def search_user(nickname) -> dict:
+    def search_user(self, nickname) -> dict:
         if not nickname:
             raise Exception("Nickname not specified")
         return Fetcher(f"/user/search/{nickname}").get_json()
     
-    def get_user(nickname) -> dict:
-        # O sa dea eroare ca datele astea se obtin cu user token, nu sunt publice
-        # Se rezolva cu login si sesiune salvata in pickle, handling la cookies sa fie reinnoite daca expira and stuff
+    def get_user(self, nickname, auth=None) -> dict:
         if not nickname:
             raise Exception("Nickname not specified")
-        return Fetcher(f"/user/profile/{nickname}").get_json()
+        if not auth:
+            auth = self.token
+        return Fetcher(f"/user/profile/{nickname}").get_json(auth=auth)
 
 
 class Forum(Fetcher):
