@@ -285,7 +285,7 @@ class StaffPerms:
 
 class UserSearch:
     def __init__(self, nickname, **kwargs):
-        data = fetcher.User.search_user(nickname)
+        data = fetcher.User().search_user(nickname)
         results = data.get("users")
         if results:
             self.results = [UserSearchResult(**result) for result in results]
