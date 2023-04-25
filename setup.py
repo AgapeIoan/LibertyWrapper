@@ -41,7 +41,7 @@ setuptools.setup(
         'Operating System :: OS Independent',
     ],
     python_requires='>=3.6',
-    install_requires=['aiohttp', 'asyncio'],
+    install_requires=['requests'],
     extras_require={
         'dev': ['check-manifest'],
         # 'test': ['coverage'],
