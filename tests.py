@@ -1,6 +1,6 @@
 import asyncio
 from src.libertywrapper.data import Faction
-asyncio.set_event_loop_policy(asyncio.WindowsSelectorEventLoopPolicy()) 
+# asyncio.set_event_loop_policy(asyncio.WindowsSelectorEventLoopPolicy()) 
 # https://stackoverflow.com/questions/68123296/asyncio-throws-runtime-error-with-exception-ignored
 
 import unittest
