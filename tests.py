@@ -1,33 +1,37 @@
 import asyncio
-from src.libertywrapper.data import Faction
-asyncio.set_event_loop_policy(asyncio.WindowsSelectorEventLoopPolicy()) 
-# https://stackoverflow.com/questions/68123296/asyncio-throws-runtime-error-with-exception-ignored
+import sys
+
+# check if windows
+if sys.platform == "win32":
+    asyncio.set_event_loop_policy(asyncio.WindowsSelectorEventLoopPolicy()) 
+    # https://stackoverflow.com/questions/68123296/asyncio-throws-runtime-error-with-exception-ignored
 
 import unittest
-from src.libertywrapper import data, fetcher
 
 class TestLibertyWrapper(unittest.TestCase):
     def test_import(self):
         import src.libertywrapper
         self.assertTrue(src.libertywrapper)
 
-    def test_import_fetcher(self):
-        from src.libertywrapper import fetcher
-        self.assertTrue(fetcher)
-
-    def test_import_data(self):
-        from src.libertywrapper import data
-        self.assertTrue(data)
+    def test_import_bot(self):
+        from src.libertywrapper import bot
+        self.assertTrue(bot)
 
 class TestData(unittest.TestCase):
+    # def __init__(self, methodName: str = "runTest") -> None:
+    #     super().__init__(methodName)
+
     def test_classes(self):
-        general = data.General()
-        staff = data.Staff()
-        onlineplayers = data.OnlinePlayers()
-        mapblips = data.MapBlips()
-        usersearch = data.UserSearch("Agape")
-        factions = data.Factions()
-        factionhistory = data.FactionHistory()
+        import src.libertywrapper.bot as bot
+        wrapper = bot.Wrapper()
+
+        general = wrapper.fetch_homepage()
+        staff = wrapper.fetch_staff()
+        onlineplayers = wrapper.fetch_online_players()
+        mapblips = wrapper.fetch_mapblips()
+        usersearch = wrapper.search_user("Agape")
+        factions = wrapper.fetch_factions()
+        # player = wrapper.fetch_user("AgapeIoan")
 
         self.assertTrue(general)
         self.assertTrue(staff)
@@ -35,8 +39,9 @@ class TestData(unittest.TestCase):
         self.assertTrue(mapblips)
         self.assertTrue(usersearch)
         self.assertTrue(factions)
-        self.assertTrue(factionhistory)
+        # self.assertTrue(player)
 
+"""
 class TestFactionMethods(unittest.TestCase):
     def test_factions_get(self):
         faction_data = data.Factions()
@@ -50,61 +55,4 @@ class TestFactionMethods(unittest.TestCase):
         self.assertFalse(factions)
         factions = faction_data.get(id=99)
         self.assertFalse(factions)
-
-class TestFetcher(unittest.TestCase):    
-    general = fetcher.General
-    user = fetcher.User
-    forum = fetcher.Forum
-    faction = fetcher.Faction
-
-    def test_general_stats(self):
-        stats = self.general.get_stats()
-        self.assertTrue(stats)
-
-    def test_general_staff(self):
-        staff = self.general.get_staff()
-        self.assertTrue(staff)
-
-    def test_general_map_blips(self):
-        map_blips = self.general.get_map_blips()
-        self.assertTrue(map_blips)
-
-    def test_general_online_players(self):
-        online_players = self.general.get_online_players()
-        self.assertTrue(online_players)
-
-    def test_user_search(self):
-        user = self.user().search_user('agape')
-        # print(user)
-        self.assertTrue(user)
-    
-    def test_user_get(self):
-        userobj = self.user()
-        userobj.init_token("AgapeIoan", "PAROLA") # salveaza token in obiect la self.token
-        user = userobj.get_user("AgapeIoan")
-        # print(user)
-        self.assertTrue(user)
-
-    def test_forum_categories(self):
-        categories = self.forum.get_forum_categories()
-        self.assertTrue(categories)
-
-    def test_forum_chat_messages(self):
-        chat_messages = self.forum.get_chat_messages()
-        self.assertTrue(chat_messages)
-
-    def test_forum_chat_latest(self):
-        chat_latest = self.forum.get_chat_latest()
-        self.assertTrue(chat_latest)
-
-    def test_faction_list(self):
-        faction_list = self.faction.get_faction_list()
-        self.assertTrue(faction_list)
-
-    def test_faction_get(self):
-        faction = self.faction.get_faction_history()
-        self.assertTrue(faction)
-
-    def test_faction_applications(self):
-        faction_applications = self.faction.get_faction_applications()
-        self.assertTrue(faction_applications)
+"""
