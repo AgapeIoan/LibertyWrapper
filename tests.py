@@ -44,11 +44,17 @@ class TestData(unittest.TestCase):
     def test_user_search(self):
         import src.libertywrapper.bot as bot
         wrapper = bot.Wrapper()
-        users = ["kseny", "a", "jjfyj", "libertystats"]
+        users = ["kseny", "a", "libertystats"]
         for user in users:
             result = wrapper.search_user(user)
             print(result)
             self.assertTrue(result)
+
+        users = ["", " ", ".!,)6", "gdyjgfukk", "xh hc iv"]
+        for user in users:
+            result = wrapper.search_user(user)
+            print(result)
+            self.assertFalse(result)
 
 """
 class TestFactionMethods(unittest.TestCase):
