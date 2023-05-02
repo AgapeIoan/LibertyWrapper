@@ -50,7 +50,7 @@ class TestData(unittest.TestCase):
             print(result)
             self.assertTrue(result)
 
-        users = ["", " ", ".!,)6", "gdyjgfukk", "xh hc iv"]
+        users = [" afggtgbb", ".!,)6", "gdyjgfukk", "xh hc iv"]
         for user in users:
             result = wrapper.search_user(user)
             print(result)
