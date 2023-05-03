@@ -41,6 +41,21 @@ class TestData(unittest.TestCase):
         self.assertTrue(factions)
         # self.assertTrue(player)
 
+    def test_user_search(self):
+        import src.libertywrapper.bot as bot
+        wrapper = bot.Wrapper()
+        users = ["kseny", "a", "libertystats"]
+        for user in users:
+            result = wrapper.search_user(user)
+            print(result)
+            self.assertTrue(result)
+
+        users = [" a", ".!,)6", "gdyjgfukk", "xh hc iv"]
+        for user in users:
+            result = wrapper.search_user(user)
+            print(result)
+            self.assertFalse(result)
+
 """
 class TestFactionMethods(unittest.TestCase):
     def test_factions_get(self):
