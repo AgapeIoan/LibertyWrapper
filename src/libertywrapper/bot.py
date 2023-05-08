@@ -24,14 +24,14 @@ def check_json_status(func):
 
 class Fetcher:
     api_url = "https://backend.liberty.mp"
-    def __init__(self, api_address=''):
+    def __init__(self, api_address='', username='', password=''):
         self.api_address = api_address
         self.url = f'{self.api_url}{self.api_address}'
         self.session = requests.Session()
         
         self.token = ""
-        self.username = ""
-        self.password = ""
+        self.username = username
+        self.password = password
 
         self.latest_result = None
 
@@ -69,6 +69,7 @@ class Fetcher:
     def init_token(self, username, password): # TODO Return type -> str or None
         if not username or not password:
             raise Exception("Username or password not provided!")
+        print("Debug: token")
         self.token = self.login(username, password).get("token")
         return self.token
 
@@ -181,9 +182,11 @@ class Fetcher:
         print("Data saved successfully!")
 
 class Wrapper:
-    def __init__(self):
+    def __init__(self, username=USERNAME, password=PASSWORD):
         self.bot = None
-        self.fetcher = Fetcher()
+        self.fetcher = Fetcher(username=username, password=password)
+        self.username = username
+        self.password = password
 
     def fetch_online_players(self):
         data = self.fetcher.get_online_players().get("users")
@@ -227,8 +230,13 @@ class Wrapper:
         return None
 
     def fetch_user(self, nickname):
-        self.fetcher.init_token(USERNAME, PASSWORD)
-        data = self.fetcher.get_user(nickname)
+        if not self.fetcher.token:
+            self.fetcher.init_token(self.username, self.password)
+        try:
+            data = self.fetcher.get_user(nickname)
+        except Exception as e:
+            # Status: ERROR | Message: User not found.
+            return None
         if data:
             player = Player(data.get("user"))
             return player

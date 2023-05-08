@@ -1,5 +1,6 @@
 import asyncio
 import sys
+from src.libertywrapper.base.config import USERNAME, PASSWORD
 
 # check if windows
 if sys.platform == "win32":
@@ -56,18 +57,20 @@ class TestData(unittest.TestCase):
             print(result)
             self.assertFalse(result)
 
-"""
-class TestFactionMethods(unittest.TestCase):
-    def test_factions_get(self):
-        faction_data = data.Factions()
-        factions = faction_data.get(id=1)
-        self.assertTrue(factions)
-        factions = faction_data.get(name="Downtown Taxi Company")
-        self.assertTrue(factions)
-        factions = faction_data.get(name="Downtown Taxi Company", id=1)
-        self.assertTrue(factions)
-        factions = faction_data.get(name="asd")
-        self.assertFalse(factions)
-        factions = faction_data.get(id=99)
-        self.assertFalse(factions)
-"""
+    """
+    def test_user_get(self):
+        import src.libertywrapper.bot as bot
+        wrapper = bot.Wrapper(username=USERNAME, password=PASSWORD)
+
+        player = wrapper.fetch_user("agapeioan")
+        self.assertTrue(wrapper.fetcher.token)
+        self.assertTrue(player)
+
+        original_token = wrapper.fetcher.token
+
+        users = [" a", ".!,)6", "gdyjgfukk", "xh hc iv"]
+        for user in users:
+            player = wrapper.fetch_user(user)
+            self.assertEqual(wrapper.fetcher.token, original_token)
+            self.assertFalse(player)
+    """
