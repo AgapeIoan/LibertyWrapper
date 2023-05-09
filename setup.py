@@ -4,7 +4,7 @@ import time
 
 setuptools.setup(
     name='libertywrapper',
-    version='1.0.1',
+    version='1.0.2',
     author='Agape Ioan',
     author_email='contact@agapeioan.ro',
     description='Unofficial Python API Wrapper for Liberty.MP RageMP Server',
