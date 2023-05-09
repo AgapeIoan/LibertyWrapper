@@ -198,7 +198,7 @@ class Wrapper:
         data = self.fetcher.get_stats()
         return General(data)
 
-    def fetch_mapblips(self):
+    def fetch_map_blips(self):
         data = self.fetcher.get_map_blips().get("blips")
         if data:
             return [MapBlip(x) for x in data]

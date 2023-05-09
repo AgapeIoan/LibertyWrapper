@@ -29,7 +29,7 @@ class TestData(unittest.TestCase):
         general = wrapper.fetch_homepage()
         staff = wrapper.fetch_staff()
         onlineplayers = wrapper.fetch_online_players()
-        mapblips = wrapper.fetch_mapblips()
+        mapblips = wrapper.fetch_map_blips()
         usersearch = wrapper.search_user("Agape")
         factions = wrapper.fetch_factions()
         # player = wrapper.fetch_user("AgapeIoan")
