@@ -45,7 +45,7 @@ The `Wrapper` object does have the following methods:
  print(online_players, posts_number) # integers
 
  for user in homepage.top_users_activity:
-	 print(user.name, user.level, self.avatar) # "username", 10, https://imgur.com/example
+	 print(user.name, user.level, user.avatar) # "username", 10, https://imgur.com/example
 	 print(user.playtime) # 10:23:00 (datetime.timedelta object)
 ```
 
